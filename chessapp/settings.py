@@ -58,23 +58,35 @@ TEMPLATES = [
 WSGI_APPLICATION = 'chessapp.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/1.8/ref/settings/#databases
-import dj_database_url
 DATABASES = {
-    'default': dj_database_url.config()
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dar8au7g3mnv9s',                      
+        'USER': 'nmgaosxkghcayo',
+        'PASSWORD': 'd484e3808151fdb4b2d4e07233c5b270ac6aba48d6e65ca88a45507fdb736b03',
+        'HOST': 'ec2-184-73-174-171.compute-1.amazonaws.com',
+        'PORT': '5432',
+    }
 }
 
 
-# Internationalization
-# https://docs.djangoproject.com/en/1.8/topics/i18n/
+if os.environ.get('DATABASE_URL', None):
+    import dj_database_url
+    DATABASES['default'] = dj_database_url.config()
 
-LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
 
-USE_I18N = True
+# Honor the 'X-Forwarded-Proto' header for request.is_secure()
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-USE_L10N = True
 
-USE_TZ = True
+# Static asset configuration
+import os
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = 'staticfiles'
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
