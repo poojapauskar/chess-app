@@ -27,4 +27,5 @@ urlpatterns = [
     url(r'^', include('check_user_active.urls')),
     url(r'^', include('inactivate_user.urls')),
     url(r'^', include('close_test.urls')),
+    url(r'^', include('get_clock.urls')),
 ]

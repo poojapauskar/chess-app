@@ -11,7 +11,7 @@ STATICFILES_DIRS = (
 SECRET_KEY = 'CanIHazS3cret?Meis1337'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -32,6 +32,7 @@ INSTALLED_APPS = (
     'check_user_active',
     'inactivate_user',
     'close_test',
+    'get_clock',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -77,6 +78,20 @@ DATABASES = {
     }
 }
 
+LANGUAGE_CODE = 'en-us'
+
+TIME_ZONE = 'UTC'
+
+USE_I18N = True
+
+USE_L10N = True
+
+USE_TZ = True
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.8/howto/static-files/
+
+STATIC_URL = '/static/'
 
 if os.environ.get('DATABASE_URL', None):
     import dj_database_url
