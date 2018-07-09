@@ -49,7 +49,7 @@ def get_queryset(request):
         )
 
   import sys
-  print sys.stderr, fields
+  print (sys.stderr, fields)
   
   
   
