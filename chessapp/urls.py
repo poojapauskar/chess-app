@@ -25,6 +25,6 @@ urlpatterns = [
     url(r'^', include('user_not_allowed_other_levels.urls')),
     url(r'^', include('saved_answers.urls')),
     url(r'^', include('check_user_active.urls')),
-    url(r'^', include('inactive_user.urls')),
+    url(r'^', include('inactivate_user.urls')),
     url(r'^', include('close_test.urls')),
 ]
