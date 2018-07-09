@@ -24,6 +24,14 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'register',
+    'login',
+    'user_not_allowed_other_levels',
+    'saved_answers',
+    'check_user_active',
+    'inactivate_user',
+    'close_test',
 )
 
 MIDDLEWARE_CLASSES = (
