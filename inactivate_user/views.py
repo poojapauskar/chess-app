@@ -36,8 +36,9 @@ def get_queryset(request):
 
   username = request.META.get('HTTP_USERNAME')
   level = request.META.get('HTTP_LEVEL')
+  is_active = request.META.get('HTTP_IS_ACTIVE')
 
-  Register.objects.filter(username=username,level=level).update(is_active="0")
+  Register.objects.filter(username=username,level=level).update(is_active=is_active)
 
   fields.append({
         'status':200,

@@ -33,8 +33,9 @@ def get_queryset(request):
 
   fields = []
       
-
-  Register.objects.all().update(is_active="0")
+  is_active = request.META.get('HTTP_IS_ACTIVE')
+  
+  Register.objects.all().update(is_active=is_active)
 
   fields.append({
         'status':200,
