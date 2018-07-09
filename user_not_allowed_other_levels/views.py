@@ -35,11 +35,13 @@ def get_queryset(request):
       
 
   username = request.META.get('HTTP_USERNAME')
-  password = request.META.get('HTTP_PASSWORD')
   level = request.META.get('HTTP_LEVEL')
+
+  print username
+  print level
   
   
-  if(Register.objects.filter(username=username,password=password,level=level,is_active="1").exists()):
+  if(Register.objects.filter(username=username,level=level,is_active="1").exists()):
     fields.append(
               {
                'status':200,
