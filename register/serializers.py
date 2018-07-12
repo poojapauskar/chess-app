@@ -31,6 +31,7 @@ class RegisterSerializer(serializers.ModelSerializer):
         instance.password = validated_data.get('password', instance.password)
         instance.level = validated_data.get('level', instance.level)
         instance.is_active = validated_data.get('is_active', instance.is_active)
+        instance.save()
         return instance
 
 
